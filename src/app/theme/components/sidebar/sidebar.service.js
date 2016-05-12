@@ -59,9 +59,10 @@
     };
 
     function defineMenuItemStates() {
+      console.log($state.get());
       return $state.get()
           .filter(function(s) {
-            return s.sidebarMeta;
+            return s.menuItem;
           })
           .map(function(s) {
             var meta = s.sidebarMeta;

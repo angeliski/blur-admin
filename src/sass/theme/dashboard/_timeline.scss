@@ -130,6 +130,13 @@
   }
 }
 
+
+  @mixin cd-timeline-left-color($color) {
+    &:before {
+      border-left-color: $color;
+    }
+  }
+
 @mixin cd-timeline-color($color) {
   background: $color;
 }
@@ -184,12 +191,6 @@
       left: 137%;
       top: 6px;
       font-size: 16px;
-    }
-  }
-
-  @mixin cd-timeline-left-color($color) {
-    &:before {
-      border-left-color: $color;
     }
   }
   .cd-timeline-content.warning {
