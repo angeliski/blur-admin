@@ -42,6 +42,8 @@
           }]
       }];
 
+      var staticMenuItems = [];
+
     this.getMenuItems = function() {
       var states = defineMenuItemStates();
       var menuItems = states.filter(function(item) {

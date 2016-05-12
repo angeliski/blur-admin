@@ -1,12 +1,43 @@
-<div class="col-md-12 col-lg-2">
-    <div ba-panel ba-panel-class="xsmall-panel light-text">
-    <div class="button-wrapper">
-    	<div class="kameleon-row">
-	      	<div class="kameleon-icon with-round-bg success"><img ng-src="{{::( 'Cashier' | kameleonImg )}}"></div>
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div ba-panel>
+    	<div class="text-center">
+	      	<div class="kameleon-icon with-round-bg inline-icon primary"><img ng-src="{{::( 'Cashier' | kameleonImg )}}"></div>
 	     </div>
-	  </div>
-	  <div class="button-wrapper">
-	     <button type="button" class="btn btn-primary">Nova venda</button>
-     </div>
+       <div class="button-wrapper">
+          <button ui-sref="dashboard" class="btn btn-primary">Nova venda</button>
+       </div>        
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div ba-panel>
+      <div class="text-center">
+          <div class="kameleon-icon with-round-bg inline-icon warning"><img ng-src="{{::( 'Online-Shopping' | kameleonImg )}}"></div>
+       </div>
+       <div class="button-wrapper">
+           <button ui-sref="dashboard"  class="btn btn-warning">Encomendas</button>
+       </div>        
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div ba-panel>
+      <div class="text-center">
+          <div class="kameleon-icon with-round-bg inline-icon danger"><img ng-src="{{::( 'Checklist' | kameleonImg )}}"></div>
+       </div>
+       <div class="button-wrapper">
+           <button ui-sref="dashboard"  class="btn btn-danger">Fechar o caixa</button>
+       </div>        
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div ba-panel>
+      <div class="text-center">
+          <div class="kameleon-icon with-round-bg inline-icon success"><img ng-src="{{::( 'Conveyor-Belt' | kameleonImg )}}"></div>
+       </div>
+       <div class="button-wrapper">
+           <button ui-sref="dashboard" class="btn btn-success">Estoque</button>
+       </div>        
     </div>
   </div>

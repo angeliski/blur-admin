@@ -22,7 +22,7 @@
 
   /** @ngInject */
   function routeConfig($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/home');
   }
 
 })();
