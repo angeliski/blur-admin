@@ -11,6 +11,43 @@
   /** @ngInject */
   function VendasPageCtrl($scope, $filter, editableOptions, editableThemes) {
 
+    $scope.itens = [{
+      nome : "Coca-Cola",
+      preco: "4,00",
+      type: "bebida"
+    },
+    {
+      nome : "Guarana",
+      preco: "4,00",
+      type: "bebida"
+    },{
+      nome : "Fanta Laranja",
+      preco: "4,00",
+      type: "bebida"
+    },
+    {
+      nome : "Fanta Uva",
+      preco: "4,00",
+      type: "bebida"
+    },
+    {
+      nome : "Sprite",
+      preco: "4,00",
+      type: "bebida"
+    },
+    {
+      nome : "H20",
+      preco: "5,00",
+      type: "bebida"
+    },
+    {
+      nome : "Salgado",
+      preco: "4,00",
+      type: "salgado"
+    }
+    ];
+
+    /* DADOS FAKE DAS TABELAS - REMOVER */
     $scope.smartTablePageSize = 10;
 
     $scope.smartTableData = [

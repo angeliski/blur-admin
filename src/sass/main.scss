@@ -2,3 +2,29 @@
 
 // injector
 // endinjector
+
+
+.cart-flow {
+  	width: 42px;
+    height: 42px;
+    cursor: pointer;
+    z-index: 9999;
+    text-decoration: none;
+    right: 2px;
+    bottom: 18px !important;
+    font-size: 22px;
+    text-align: center;
+    opacity: 0.4;
+    color: #209e91;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    line-height: 40px;
+
+    position: fixed;
+    display: inline;
+    right: 45px;
+    top: 185px;
+  &:hover {
+    opacity: 0.8;
+  }
+}

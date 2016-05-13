@@ -1,184 +1,44 @@
 <div>
   <div class="row">
     <div class="col-md-12">
+      <i class="fa fa-shopping-cart cart-flow" id="cart" title="Cart"></i>
       <div
           ba-panel
           ba-panel-class="with-scroll horizontal-tabs tabs-panel large-panel">
         <uib-tabset>
           <uib-tab heading="Bebidas">
             
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-3 col-lg-3" ng-repeat="item in itens" ng-if="item.type == 'bebida'">
                 <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
+                  <div class="panel-body success">
+                    <div class="center-content text-center block">
                           <div class="text-center">
-                            Coca-Cola
+                            {{item.nome}}
                           </div>                    
                           <div class="text-center">
-                            R$ 4,00
+                            R$ {{item.preco}}
                           </div>                    
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-lg-3">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
-                  
-                  <div class="panel-body">
-                          <div class="text-center">
-                            Coca-Cola
-                          </div>                    
-                          <div class="text-center">
-                            R$ 4,00
-                          </div>                    
-                  </div>
-                </div>
-              </div>
-
 
           </uib-tab>
           <uib-tab heading="Salgados & Doces">
-            
+            <div class="col-md-3 col-lg-3" ng-repeat="item in itens" ng-if="item.type == 'salgado'">
+                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
+                  <div class="panel-body">
+                    <div class="center-content text-center block">
+                          <div class="text-center">
+                            {{item.nome}}
+                          </div>                    
+                          <div class="text-center">
+                            R$ {{item.preco}}
+                          </div>                    
+                    </div>
+                  </div>
+                </div>
+              </div>
           </uib-tab>
         </uib-tabset>
       </div>
