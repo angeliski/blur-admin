@@ -28,3 +28,41 @@
     opacity: 0.8;
   }
 }
+
+
+.bg-fs-success {
+  background-color: rgba($success,0.85) !important;
+  a{
+    color: $danger-dark;
+    &:hover{
+      color: $danger;
+    }
+  }
+}
+.bg-fs-info {
+  background-color: rgba($info,0.85) !important;
+  a{
+    color: $warning-light;
+    &:hover{
+      color: $warning;
+    }
+  }
+}
+.bg-fs-warning {
+  background-color: rgba($warning,0.85) !important;
+  a{
+    color: $danger-dark;
+    &:hover{
+      color: $danger;
+    }
+  }
+}
+.bg-fs-danger {
+  background-color: rgba($danger,0.85) !important;
+  a{
+    color: $warning-light;
+    &:hover{
+      color: $warning;
+    }
+  }
+}

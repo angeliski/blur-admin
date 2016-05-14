@@ -9,7 +9,7 @@
           <uib-tab heading="Bebidas">
             
             <div class="col-md-3 col-lg-3" ng-repeat="item in itens" ng-if="item.type == 'bebida'">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
+                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel {{item.panelColor}}">
                   <div class="panel-body success">
                     <div class="center-content text-center block">
                           <div class="text-center">
@@ -26,7 +26,7 @@
           </uib-tab>
           <uib-tab heading="Salgados & Doces">
             <div class="col-md-3 col-lg-3" ng-repeat="item in itens" ng-if="item.type == 'salgado'">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel">
+                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel {{item.panelColor}}">
                   <div class="panel-body">
                     <div class="center-content text-center block">
                           <div class="text-center">
@@ -44,4 +44,4 @@
       </div>
     </div>
   </div>
-</div>
+</div>h

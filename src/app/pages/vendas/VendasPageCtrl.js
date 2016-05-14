@@ -14,36 +14,43 @@
     $scope.itens = [{
       nome : "Coca-Cola",
       preco: "4,00",
-      type: "bebida"
+      type: "bebida",
+      panelColor: ''
     },
     {
       nome : "Guarana",
       preco: "4,00",
-      type: "bebida"
+      type: "bebida",
+      panelColor: 'bg-fs-danger'
     },{
       nome : "Fanta Laranja",
       preco: "4,00",
-      type: "bebida"
+      type: "bebida",
+      panelColor: 'bg-fs-info'
     },
     {
       nome : "Fanta Uva",
       preco: "4,00",
-      type: "bebida"
+      type: "bebida",
+      panelColor: 'bg-fs-success'
     },
     {
       nome : "Sprite",
       preco: "4,00",
-      type: "bebida"
+      type: "bebida",
+      panelColor: 'bg-fs-warning'
     },
     {
       nome : "H20",
       preco: "5,00",
-      type: "bebida"
+      type: "bebida",
+      panelColor: 'bg-fs-success'
     },
     {
       nome : "Salgado",
       preco: "4,00",
-      type: "salgado"
+      type: "salgado",
+      panelColor: 'bg-fs-danger'
     }
     ];
 

@@ -15,6 +15,7 @@
           url: '/home',
           templateUrl: 'app/pages/home/home.html',
           title: 'Inicio',
+          controller: "HomePageCtrl",
           menuItem: true,
           sidebarMeta: {
             icon: 'ion-android-home',
