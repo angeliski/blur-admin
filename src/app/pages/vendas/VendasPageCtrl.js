@@ -9,50 +9,28 @@
       .controller('VendasPageCtrl', VendasPageCtrl);
 
   /** @ngInject */
-  function VendasPageCtrl($scope, $filter, editableOptions, editableThemes) {
+  function VendasPageCtrl($scope, $filter, editableOptions, editableThemes, $uibModal, vendasService) {
+    $scope.itens = vendasService.listProducts();
+    $scope.produtos = vendasService.getProdutosAdicionados();
 
-    $scope.itens = [{
-      nome : "Coca-Cola",
-      preco: "4,00",
-      type: "bebida",
-      panelColor: ''
-    },
-    {
-      nome : "Guarana",
-      preco: "4,00",
-      type: "bebida",
-      panelColor: 'bg-fs-danger'
-    },{
-      nome : "Fanta Laranja",
-      preco: "4,00",
-      type: "bebida",
-      panelColor: 'bg-fs-info'
-    },
-    {
-      nome : "Fanta Uva",
-      preco: "4,00",
-      type: "bebida",
-      panelColor: 'bg-fs-success'
-    },
-    {
-      nome : "Sprite",
-      preco: "4,00",
-      type: "bebida",
-      panelColor: 'bg-fs-warning'
-    },
-    {
-      nome : "H20",
-      preco: "5,00",
-      type: "bebida",
-      panelColor: 'bg-fs-success'
-    },
-    {
-      nome : "Salgado",
-      preco: "4,00",
-      type: "salgado",
-      panelColor: 'bg-fs-danger'
+
+    $scope.addItem = function(id, qtd){
+      vendasService.addItem(id,qtd);
+      $scope.produtos = vendasService.getProdutosAdicionados();
     }
-    ];
+    
+    $scope.getTotalVenda = function(){
+      var sum = 0;
+     for (var i = 0; i < vendasService.getProdutosAdicionados().length; i++) {
+        var prod = vendasService.getProdutosAdicionados()[i];
+        sum +=  prod.qtd * prod.preco;
+      } 
+      return sum;
+    }
+
+    
+
+    
 
     /* DADOS FAKE DAS TABELAS - REMOVER */
     $scope.smartTablePageSize = 10;

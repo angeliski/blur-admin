@@ -90,6 +90,10 @@ a.al-sidebar-list-link {
   border-radius: 0px !important;
   width: 4px !important;
   left: 176px;
+
+ .auto-left &{
+    left: auto;
+  }
 }
 
 @mixin layout-collapsed() {

@@ -1,7 +1,46 @@
+<uib-accordion ng-show="produtos.length">
+  <uib-accordion-group panel-class="panel-success bootstrap-panel accordion-panel" >
+    <uib-accordion-heading>
+      <i class="fa fa-shopping-cart"></i> {{getTotalVenda() | currency:"R$":2 }}
+    </uib-accordion-heading>
+    <div class="table-responsive">
+    <table class="table table-bordered table-hover table-condensed">
+  <tr>
+    <td>Prod<span class="hidden-xs hidden-sm">uto</span></td>
+    <td>Qtd</td>
+    <td><span class="hidden-xs hidden-sm">Valor</span> <span class="hidden-md hidden-lg">R$</span></td>
+    <td style="width: 15%;"></td>
+  </tr>
+  <tr ng-repeat="item in produtos">
+    <td>
+        <span>
+          {{ item.nome }}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ item.qtd }}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{item.preco * item.qtd | currency:"R$":2}}
+        </span>
+    </td>
+    <td>
+        <button type="button" class="hidden-xs hidden-sm btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
+        <button type="button" class="btn btn-warning btn-icon"><i class="ion-minus-round"></i></button>
+        <button type="button" class="btn btn-danger btn-icon"><i class="ion-close-circled"></i></button>
+      
+    </td>
+  </tr>
+</table>
+</div>
+  </uib-accordion-group>
+</uib-accordion>
 <div>
   <div class="row">
     <div class="col-md-12">
-      <i class="fa fa-shopping-cart cart-flow" id="cart" title="Cart"></i>
       <div
           ba-panel
           ba-panel-class="with-scroll horizontal-tabs tabs-panel large-panel">
@@ -9,14 +48,14 @@
           <uib-tab heading="Bebidas">
             
             <div class="col-md-3 col-lg-3" ng-repeat="item in itens" ng-if="item.type == 'bebida'">
-                <div class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel {{item.panelColor}}">
+                <div ng-click="addItem(item.id, 1)" class="panel panel-success panel-shadow contextual-example-panel bootstrap-panel {{item.panelColor}}">
                   <div class="panel-body success">
                     <div class="center-content text-center block">
                           <div class="text-center">
                             {{item.nome}}
                           </div>                    
                           <div class="text-center">
-                            R$ {{item.preco}}
+                            {{item.preco | currency:"R$":2}}
                           </div>                    
                     </div>
                   </div>
