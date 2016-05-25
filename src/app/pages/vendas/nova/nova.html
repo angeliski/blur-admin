@@ -28,9 +28,9 @@
         </span>
     </td>
     <td>
-        <button type="button" class="hidden-xs hidden-sm btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
-        <button type="button" class="btn btn-warning btn-icon"><i class="ion-minus-round"></i></button>
-        <button type="button" class="btn btn-danger btn-icon"><i class="ion-close-circled"></i></button>
+        <button ng-click="addItem(item.id, 1)" type="button" class="hidden-xs hidden-sm btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
+        <button ng-click="removeItem(item.id, 1)" type="button" class="btn btn-warning btn-icon"><i class="ion-minus-round"></i></button> 
+        <button ng-click="deletaItem(item.id)" type="button" class="btn btn-danger btn-icon"><i class="ion-close-circled"></i></button>
       
     </td>
   </tr>

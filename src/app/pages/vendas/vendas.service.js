@@ -1,6 +1,11 @@
 (function() {
   'use strict';
 
+  function removeFromArray(arrayOrig, element){
+      var index = arrayOrig.indexOf(element);
+      arrayOrig.splice(index, 1);
+  }
+
   angular.module('BlurAdmin.pages.vendas')
       .service('vendasService', vendasService);
 
@@ -30,6 +35,27 @@
           }
         };
 
+    };
+
+    this.removeItem =  function(id, qtd){
+        function findItem(item){
+                  return item.id == id;
+         };
+
+        var selecionado = produtos.find(findItem);
+        selecionado.qtd -= qtd;
+        if(selecionado.qtd <= 0){
+          removeFromArray(produtos,selecionado);
+        }
+    };
+
+    this.deletaItem = function(id){
+        function findItem(item){
+                  return item.id == id;
+         };
+
+        var selecionado = produtos.find(findItem);
+        removeFromArray(produtos,selecionado);
     };
 
     this.listProducts = function (){

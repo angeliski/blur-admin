@@ -18,6 +18,17 @@
       vendasService.addItem(id,qtd);
       $scope.produtos = vendasService.getProdutosAdicionados();
     }
+
+    $scope.removeItem = function(id, qtd){
+      vendasService.removeItem(id,qtd);
+      $scope.produtos = vendasService.getProdutosAdicionados();
+    }
+
+    $scope.deletaItem = function(id, qtd){
+      vendasService.deletaItem(id);
+      $scope.produtos = vendasService.getProdutosAdicionados();
+    }
+
     
     $scope.getTotalVenda = function(){
       var sum = 0;
