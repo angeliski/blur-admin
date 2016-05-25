@@ -1,5 +1,33 @@
+<div ng-show="produtos.length" ba-panel ba-panel-class="panel-invisible light-text">
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <h3>Finalizar venda</h3>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="col-lg-3 col-md-12">
+                <button class="btn btn-with-icon btn-success">
+                    <i class="ion-cash"></i>
+                    Dinheiro
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <button class="btn btn-with-icon btn-warning">
+                    <i class="ion-card"></i>
+                    Cartão
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <button class="btn btn-with-icon btn-danger">
+                    <i class="ion-loop"></i>
+                    Crédito
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <uib-accordion ng-show="produtos.length">
-  <uib-accordion-group panel-class="panel-success bootstrap-panel accordion-panel" >
+  <uib-accordion-group panel-class="panel-primary bootstrap-panel accordion-panel" >
     <uib-accordion-heading>
       <i class="fa fa-shopping-cart"></i> {{getTotalVenda() | currency:"R$":2 }}
     </uib-accordion-heading>
@@ -29,7 +57,7 @@
     </td>
     <td>
         <button ng-click="addItem(item.id, 1)" type="button" class="hidden-xs hidden-sm btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
-        <button ng-click="removeItem(item.id, 1)" type="button" class="btn btn-warning btn-icon"><i class="ion-minus-round"></i></button> 
+        <button ng-click="removeItem(item.id, 1)" type="button" class="btn btn-warning btn-icon"><i class="ion-minus-round"></i></button>
         <button ng-click="deletaItem(item.id)" type="button" class="btn btn-danger btn-icon"><i class="ion-close-circled"></i></button>
       
     </td>
@@ -53,10 +81,10 @@
                     <div class="center-content text-center block">
                           <div class="text-center">
                             {{item.nome}}
-                          </div>                    
+                          </div>
                           <div class="text-center">
                             {{item.preco | currency:"R$":2}}
-                          </div>                    
+                          </div>
                     </div>
                   </div>
                 </div>
@@ -70,10 +98,10 @@
                     <div class="center-content text-center block">
                           <div class="text-center">
                             {{item.nome}}
-                          </div>                    
+                          </div>
                           <div class="text-center">
                             R$ {{item.preco}}
-                          </div>                    
+                          </div>
                     </div>
                   </div>
                 </div>
