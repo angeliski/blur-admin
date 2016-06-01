@@ -39,9 +39,14 @@
       return sum;
     }
 
-    
+    $scope.finalizarVenda = function (type){
+      vendasService.finalizarVenda(type);
+      $scope.produtos = vendasService.getProdutosAdicionados();
+    }
 
-    
+
+
+
 
     /* DADOS FAKE DAS TABELAS - REMOVER */
     $scope.smartTablePageSize = 10;

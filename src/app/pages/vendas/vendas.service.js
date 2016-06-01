@@ -10,9 +10,15 @@
       .service('vendasService', vendasService);
 
   /** @ngInject */
-  function vendasService($state) {
-    
+  function vendasService($state, $uibModal,toastr) {
+   //Sempre tomar cuidado ao reatribuir um array novo ao produtos,
+   //  porque o angular não vai atualizar de boa
+   // precisa buscar os itens novamente
 
+    this.finalizarVenda = function(type){
+        produtos = [];
+        toastr.success('Sua compra foi finalizada!');
+    }
     this.getProdutosAdicionados = function (){
       return produtos;
     }

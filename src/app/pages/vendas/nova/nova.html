@@ -1,23 +1,37 @@
 <div ng-show="produtos.length" ba-panel ba-panel-class="panel-invisible light-text">
-    <div class="row">
+    <div class="btn-group hidden-md hidden-lg" uib-dropdown dropdown-append-to-body>
+        <button class="btn btn-with-icon btn-success" ng-click="finalizarVenda('dinheiro')">
+            <i class="ion-cash"></i>
+            Dinheiro
+        </button>
+        <button type="button" class="btn btn-success " uib-dropdown-toggle>
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul uib-dropdown-menu>
+            <li><a ng-click="finalizarVenda('cartao')">Cartão</a></li>
+            <li><a ng-click="finalizarVenda('credito')">Crédito</a></li>
+        </ul>
+    </div>
+    <div class="hidden-xs hidden-sm row">
         <div class="col-md-2 col-lg-2">
             <h3>Finalizar venda</h3>
         </div>
         <div class="col-md-6 col-lg-6">
-            <div class="col-lg-3 col-md-12">
-                <button class="btn btn-with-icon btn-success">
+            <div class="padding-ten col-lg-3 col-md-12">
+                <button class="btn btn-block btn-with-icon btn-success" ng-click="finalizarVenda('dinheiro')">
                     <i class="ion-cash"></i>
                     Dinheiro
                 </button>
             </div>
-            <div class="col-lg-3 col-md-12">
-                <button class="btn btn-with-icon btn-warning">
+            <div class="padding-ten col-lg-3 col-md-12">
+                <button class="btn btn-block btn-with-icon btn-warning" ng-click="finalizarVenda('cartao')">
                     <i class="ion-card"></i>
                     Cartão
                 </button>
             </div>
-            <div class="col-lg-3 col-md-12">
-                <button class="btn btn-with-icon btn-danger">
+            <div class="padding-ten col-lg-3 col-md-12">
+                <button class="btn btn-block btn-with-icon btn-danger" ng-click="finalizarVenda('credito')">
                     <i class="ion-loop"></i>
                     Crédito
                 </button>
@@ -56,9 +70,9 @@
         </span>
     </td>
     <td>
-        <button ng-click="addItem(item.id, 1)" type="button" class="hidden-xs hidden-sm btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
+        <button ng-click="addItem(item.id, 1)" type="button" class="btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
         <button ng-click="removeItem(item.id, 1)" type="button" class="btn btn-warning btn-icon"><i class="ion-minus-round"></i></button>
-        <button ng-click="deletaItem(item.id)" type="button" class="btn btn-danger btn-icon"><i class="ion-close-circled"></i></button>
+        <button ng-click="deletaItem(item.id)" type="button" class="hidden-xs hidden-sm btn btn-danger btn-icon"><i class="ion-close-circled"></i></button>
       
     </td>
   </tr>
