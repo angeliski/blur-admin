@@ -61,7 +61,6 @@
     };
 
     function defineMenuItemStates() {
-      console.log($state.get());
       return $state.get()
           .filter(function(s) {
             return s.menuItem;

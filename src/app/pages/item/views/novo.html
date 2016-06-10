@@ -1,0 +1,78 @@
+<div
+        ba-panel
+        ba-panel-title="Cadastro de item"
+        ba-panel-class="with-scroll">
+    <form>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control" id="descricao" placeholder="Descrição">
+        </div>
+        <div class="form-group">
+            <label for="UNitem">Unidade</label>
+            <select name="UNitem" id="UNitem" class="form-control">
+                <option value=""> - </option>
+                <option value="5">PCT02-Pacote c/ 2 UN</option>
+                <option value="6">PCT04-Pacote c/ 4 UN</option>
+                <option value="14">PCT05-Pacote c/ 5 UN</option>
+                <option value="7">PCT06-Pacote c/ 6 UN</option>
+                <option value="8">PCT08-Pacote c/ 8 UN</option>
+                <option value="9">PCT10-Pacote c/ 10 UN</option>
+                <option value="10">PCT12-Pacote c/ 12 UN</option>
+                <option value="16">PCT15-Pacote c/ 15 UN</option>
+                <option value="11">PCT16-Pacote c/ 16 UN</option>
+                <option value="12">PCT24-Pacote c/ 24 UN</option>
+                <option value="15">PCT25-Pacote c/ 25 UN</option>
+                <option value="17">PCT50-Pacote c/ 50 UN</option>
+                <option value="13">PCT64-Pacote c/ 64 UN</option>
+                <option value="3">PCTgrd-Pacote Grande</option>
+                <option value="2">PCTpeq-Pacote Pequeno</option>
+                <option value="4">PDC-Pedaço</option>
+                <option value="1">UN-Unidade</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="TPitem">Tipo do item</label>
+            <select name="TPitem" id="TPitem" class="form-control">
+                <option value="1">Comprado</option>
+                <option value="2">Fabricado</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <switch color="success" on-text="Ativo" off-text="Desativado" size="mini"></switch>
+        </div>
+        <div class="form-group">
+            <label for="GRitem">Grupo do item</label>
+            <select name="GRitem" id="GRitem" class="form-control">
+                <option value="1">Alimentos</option>
+                <option value="2">Materiais Ritualístico</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="custo">Custo R$</label>
+            <input type="number" class="form-control" min="1" step="any" id="custo" placeholder="Custo">
+        </div>
+        <div class="form-group">
+            <label for="qtdseg">Quantidade segurança</label>
+            <input type="number" class="form-control" id="qtdseg" placeholder="Quantidade de segurança">
+        </div>
+        <div class="form-group">
+            <label for="qtdrepo">Quantidade reposição</label>
+            <input type="number" class="form-control" id="qtdrepo" placeholder="Quantidade de reposição">
+        </div>
+        <div class="form-group">
+            <label for="CDestqPri">Estoque principal</label>
+            <select name="CDestqPri" id="CDestqPri" class="form-control">
+                <option value=""> - </option>
+                <option value="2">Café do Babá-TGSP</option>
+                <option value="3">Alaka-SP</option>
+                <option value="4">Alaká-Fortaleza</option>
+                <option value="5">Alaká-Campinas</option>
+                <option value="6">Kilombo-Campinas</option>
+            </select>
+        </div>
+        <button class="btn btn-with-icon btn-success" ui-sref="item.lista">
+            <i class="ion-checkmark-circled"></i>
+            Salvar
+        </button>
+    </form>
+</div>

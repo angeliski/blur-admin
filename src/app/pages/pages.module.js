@@ -16,8 +16,10 @@
     'BlurAdmin.pages.charts',
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
+      
     'BlurAdmin.pages.home',
-    'BlurAdmin.pages.vendas'
+    'BlurAdmin.pages.vendas',
+    'TGB.pages.item'
   ])
       .config(routeConfig);
 

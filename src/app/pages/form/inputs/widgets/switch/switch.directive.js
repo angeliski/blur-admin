@@ -19,10 +19,13 @@
       template: '<div class="switch-container {{color}}"><input type="checkbox" ng-model="ngModel"></div>',
       link: function (scope, elem, attr) {
         $timeout(function(){
+          debugger;
           scope.color = attr.color;
           $(elem).find('input').bootstrapSwitch({
-            size: 'small',
-            onColor: attr.color
+            size: attr.size || 'small',
+            onColor: attr.color,
+            onText: attr.onText || "Ativo",
+            offText: attr.offText || "Desativado"
           });
         });
       }
