@@ -9,8 +9,23 @@
       .controller('ItemPageCtrl', ItemPageCtrl);
 
   /** @ngInject */
-  function ItemPageCtrl($scope,itemService, $uibModal) {
+  function ItemPageCtrl($scope,itemService,itemGenericService, $state, $uibModal) {
+      $scope.item =  { ativo:false };
       $scope.itens = itemService.listItens();
+      $scope.itensUnidade = itemGenericService.recoverItensUnidade();
+      $scope.itensTipo = itemGenericService.recoverItensTipo();
+      $scope.itensGrupo = itemGenericService.recoverItensGrupo();
+      $scope.itensEstoque = itemGenericService.recoverItensEstoques();
+      
+      $scope.$watch("item", function(){
+          console.log("watch",arguments);
+      });
+
+    $scope.salvarItem = function(item){
+      console.log(item);
+      //itemService.salvar(item);
+      //$state.go("item.lista");
+    }
 
     $scope.editVariacao = function(){
 
