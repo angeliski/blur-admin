@@ -10,43 +10,46 @@
 
   /** @ngInject */
   function ItemPageCtrl($scope,itemService,itemGenericService, $state, $uibModal) {
-      $scope.item =  { ativo:false };
+      $scope.item =  { variacoes:[] };
       $scope.itens = itemService.listItens();
       $scope.itensUnidade = itemGenericService.recoverItensUnidade();
       $scope.itensTipo = itemGenericService.recoverItensTipo();
       $scope.itensGrupo = itemGenericService.recoverItensGrupo();
       $scope.itensEstoque = itemGenericService.recoverItensEstoques();
-      
-      $scope.$watch("item", function(){
-          console.log("watch",arguments);
-      });
 
-    $scope.salvarItem = function(item){
-      console.log(item);
-      //itemService.salvar(item);
-      //$state.go("item.lista");
-    }
 
-    $scope.editVariacao = function(){
+      $scope.salvarItem = function(item){
+          itemService.salvar(item);
+          $state.go("item.lista");
+      };
 
-    }
+      $scope.editVariacao = function(variacao){
+          $scope.variacao = variacao;
+          $scope.openModalVariacao();
+      };
 
-    $scope.addVariacao = function(){
-      $scope.modalVariacao =  $uibModal.open({
-        animation: true,
-        controller: function ($scope,$uibModalInstance){
-          $scope.salvarVariacao = function(){
+      $scope.removeVariacao = function(variacao){
 
-            $uibModalInstance.close();
+      };
 
+      $scope.salvarVariacao = function(variacao){
+          if(variacao && variacao.descricao){
+              $scope.item.variacoes.push(variacao);
           }
-        },
-        bindToController: true,
-        templateUrl: "app/pages/item/views/variacao-unica.html",
-        size: "sm"
-      });
-      console.log($scope.modalVariacao);
-    }
+          $scope.variacao = {};
+          $scope.modalVariacao.close();
+      };
+
+
+      $scope.openModalVariacao = function(){
+          $scope.modalVariacao =  $uibModal.open({
+            animation: true,
+            scope: $scope,
+            bindToController: true,
+            templateUrl: "app/pages/item/views/variacao-unica.html",
+            size: "sm"
+          });
+      }
   }
 
 })();

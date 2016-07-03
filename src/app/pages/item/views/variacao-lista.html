@@ -1,15 +1,30 @@
-<div
-        ba-panel
-        ba-panel-title="Lista de variações"
-        ba-panel-class="with-scroll">
-    <form>
-        <div class="form-group">
-            <label for="descricao">Descrição</label>
-            <input type="text" class="form-control" id="descricao" placeholder="Descrição">
+<uib-accordion>
+    <uib-accordion-group panel-class="panel-primary bootstrap-panel accordion-panel margin-top-one " data-top="10px">
+        <uib-accordion-heading>
+            Variações do produto
+        </uib-accordion-heading>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-condensed">
+                <tr>
+                    <td>Desc<span class="hidden-xs hidden-sm">rição</span></td>
+                    <td style="width: 15%;"></td>
+                </tr>
+                <tr ng-repeat="variacao in item.variacoes">
+                    <td>
+        <span>
+          {{ variacao.descricao }}
+        </span>
+                    </td>
+                    <td>
+                        <button ng-click="editVariacao(variacao)" type="button" class="btn btn-warning btn-icon"><i
+                                class="ion-edit"></i></button>
+                        <button ng-click="removeVariacao(variacao)" type="button"
+                                class="hidden-xs hidden-sm btn btn-danger btn-icon"><i class="ion-close-circled"></i>
+                        </button>
+
+                    </td>
+                </tr>
+            </table>
         </div>
-        <button class="btn btn-with-icon btn-success" ng-click="salvarVariacao()">
-            <i class="ion-checkmark-circled"></i>
-            Salvar
-        </button>
-    </form>
-</div>
+    </uib-accordion-group>
+</uib-accordion>
