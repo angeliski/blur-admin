@@ -1,0 +1,1 @@
+Criar uma diretiva para os estoques

@@ -1,0 +1,31 @@
+<div
+        ba-panel
+        ba-panel-title="Cadastro de Aba"
+        ba-panel-class="with-scroll">
+    <form>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control" id="descricao" placeholder="Descrição" ng-model="item.descricao">
+        </div>
+        <div class="form-group">
+            <switch ng-model="item.ativo" color="success" on-text="Ativo" off-text="Desativado" size="mini"></switch>
+        </div>
+        <div class="form-group">
+            <label for="ordemvenda">Ordem na tela de venda</label>
+            <input type="number" class="form-control" id="ordemvenda"
+                   ng-model="item.ordemVenda">
+        </div>
+        <div class="form-group">
+            <label for="CDestqPri">Estoque vinculado</label>
+            <select name="CDestqPri" id="CDestqPri" class="form-control" ng-model="item.estoque">
+                <option value=""> -</option>
+                <option ng-repeat="estoque in itensEstoque" value="{{estoque.id}}">{{estoque.descricao}}</option>
+            </select>
+        </div>
+        <button class="btn btn-with-icon btn-success" ng-click="salvarItem(item)">
+            <i class="ion-checkmark-circled"></i>
+            Salvar
+        </button>
+    </form>
+
+</div>

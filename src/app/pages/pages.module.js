@@ -19,7 +19,8 @@
       
     'BlurAdmin.pages.home',
     'BlurAdmin.pages.vendas',
-    'TGB.pages.item'
+    'TGB.pages.item',
+    'TGB.pages.param'
   ])
       .config(routeConfig);
 
