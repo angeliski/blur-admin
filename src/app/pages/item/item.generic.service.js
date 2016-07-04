@@ -51,5 +51,17 @@
             ]
     };
 
+    this.recoverItensDepartamento = function () {
+      return [
+        {id: 6, descricao : "Alaká"},
+        {id: 1, descricao : "CESA"},
+        {id: 3, descricao : "CHEV"},
+        {id: 5, descricao : "desativado"},
+        {id: 7, descricao : "desativado"},
+        {id: 4, descricao : "Kilombo/Café"},
+        {id: 2, descricao : "TerraKota"}
+      ]
+    };
+
   }
 })();

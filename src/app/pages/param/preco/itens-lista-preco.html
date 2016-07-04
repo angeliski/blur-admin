@@ -1,0 +1,32 @@
+<uib-accordion>
+    <uib-accordion-group panel-class="panel-primary bootstrap-panel accordion-panel margin-top-one " data-top="10px">
+        <uib-accordion-heading>
+            Produtos da lista
+        </uib-accordion-heading>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-condensed">
+                <tr>
+                    <td>Desc<span class="hidden-xs hidden-sm">rição</span></td>
+                    <td>Aba</td>
+                    <td>Valor</td>
+                    <td>Ativo</td>
+                    <td style="width: 5%;"></td>
+                </tr>
+                <tr ng-repeat="produto in item.produtos">
+                    <td>
+                        <span>
+                          {{ produto.descricao }}
+                        </span>
+                    </td>
+                    <td>{{produto.aba}}</td>
+                    <td>{{produto.valor}}</td>
+                    <td><span ng-class="produto.ativo ? 'ion-eye' : 'ion-eye-disabled' "></span></td>
+                    <td>
+                        <button ng-click="editVariacao(produto)" type="button" class="btn btn-default btn-icon"><i
+                                class="ion-edit"></i></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </uib-accordion-group>
+</uib-accordion>

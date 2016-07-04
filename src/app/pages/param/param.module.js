@@ -39,8 +39,25 @@
         sidebarMeta: {
             order: 30,
         },
+    }).state('param.lista-preco', {
+        url: '/lista-preco',
+        templateUrl: 'app/pages/param/preco/lista-preco.html',
+        controller: 'ListaPrecoPageCtrl',
+        title: 'Preços',
+        menuItem: true,
+        sidebarMeta: {
+            order: 40,
+        },
+    }).state('param.lista-preco-nova', {
+        url: '/lista-preco-nova',
+        templateUrl: 'app/pages/param/preco/nova-lista-preco.html',
+        controller: 'ListaPrecoPageCtrl',
+        title: 'Nova lista de preços',
+        menuItem: false,
+        sidebarMeta: {
+            order: 50,
+        },
     });
-      ;
       
     $urlRouterProvider.when('/param','/param/aba');
   }

@@ -1,6 +1,6 @@
 <div class="col-lg-12 col-md-12">
     <div class="action-panel">
-        <button class="btn btn-with-icon btn-success" ui-sref="param.abanova">
+        <button class="btn btn-with-icon btn-success" ui-sref="param.lista-preco-nova">
             <i class="ion-plus"></i>
             Nova
         </button>
@@ -10,7 +10,8 @@
             <thead>
             <tr class="sortable ">
                 <th class="table-id" st-sort="id" st-sort-default="true">#</th>
-                <th st-sort="descricao">Descrição</th>
+                <th>Departamento</th>
+                <th>Validade</th>
                 <th st-sort="ativo">Ativo</th>
                 <th></th>
             </tr>
@@ -18,7 +19,8 @@
             <tbody>
             <tr ng-repeat="item in itens">
                 <td class="table-id">{{item.id}}</td>
-                <td>{{item.descricao}}</td>
+                <td>{{item.departamento}}</td>
+                <td>{{item.validade}}</td>
                 <td>
                     <span ng-class="item.ativo ? 'ion-eye' : 'ion-eye-disabled' "></span>
                 </td>

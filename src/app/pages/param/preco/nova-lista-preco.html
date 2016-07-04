@@ -1,0 +1,45 @@
+<div
+        ba-panel
+        ba-panel-title="Cadastro de lista de preços"
+        ba-panel-class="with-scroll">
+    <form>
+        <div class="form-group">
+            <label for="CDestqPri">Estoque da lista</label>
+            <select name="CDestqPri" id="CDestqPri" class="form-control" ng-model="item.estoque">
+                <option value=""> -</option>
+                <option ng-repeat="estoque in itensEstoque" value="{{estoque.id}}">{{estoque.descricao}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Depto">Departamento</label>
+            <select name="Depto" id="Depto" class="form-control" ng-model="item.departamento">
+                <option value=""> -</option>
+                <option ng-repeat="estoque in itensDepartamento" value="{{estoque.id}}">{{estoque.descricao}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="validadeInicio">Data de validade de:</label>
+            <input type="date" class="form-control" id="validadeInicio" placeholder="Inicio" ng-model="item.validadeInicio">
+        </div>
+        <div class="form-group">
+            <label for="validadeFim">Data de validade até:</label>
+            <input type="date" class="form-control" id="validadeFim" placeholder="Fim" ng-model="item.validadeFim">
+        </div>
+        <div class="form-group">
+            <switch ng-model="item.ativo" color="success" on-text="Ativo" off-text="Desativado" size="mini"></switch>
+        </div>
+
+        <button class="btn btn-with-icon btn-success" ng-click="salvarItem(item)">
+            <i class="ion-checkmark-circled"></i>
+            Salvar
+        </button>
+        <button class="btn btn-with-icon btn-info" ng-click="openModalProduto()">
+            <i class="ion-plus-circled"></i>
+            Adicionar produto
+        </button>
+        <div class="form-group">
+            <div ng-include="'app/pages/param/preco/itens-lista-preco.html'"></div>
+        </div>
+    </form>
+
+</div>

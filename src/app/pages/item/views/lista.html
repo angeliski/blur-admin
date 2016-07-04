@@ -13,6 +13,7 @@
                 <th class="table-id" st-sort="id" st-sort-default="true">#</th>
                 <th st-sort="descricao">Descrição</th>
                 <th st-sort="ativo">Ativo</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -21,6 +22,9 @@
                 <td>{{item.descricao}}</td>
                 <td>
                     <span ng-class="item.ativo ? 'ion-eye' : 'ion-eye-disabled' "></span>
+                </td>
+                <td>
+                    <button ng-click="editItem(item.id)" type="button" class="btn btn-default btn-icon"><i class="ion-edit"></i></button>
                 </td>
             </tr>
             </tbody>
