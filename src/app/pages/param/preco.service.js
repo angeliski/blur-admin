@@ -37,6 +37,15 @@
       }
     };
 
+    this.adicionarProdutoALista = function (lista, produto){
+        if(lista.produtos){
+          if(!produto.id){
+              produto.id = lista.produtos.length;
+              lista.produtos.push(produto);
+          }
+        }
+    };
+    
     itens = this.recoverItens();
   }
 })();

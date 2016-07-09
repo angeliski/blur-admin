@@ -9,9 +9,14 @@
       .controller('AbaPageCtrl', AbaPageCtrl);
 
   /** @ngInject */
-  function AbaPageCtrl($scope,abaService,itemGenericService) {
+  function AbaPageCtrl($scope,$state ,abaService,itemGenericService) {
     $scope.itens = abaService.listItens();
     $scope.itensEstoque = itemGenericService.recoverItensEstoques();
+
+    $scope.salvarItem = function(item){
+      abaService.salvar(item);
+      $state.go("param.aba");
+    }
   }
 
 })();

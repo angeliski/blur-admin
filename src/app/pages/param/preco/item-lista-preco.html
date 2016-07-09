@@ -5,21 +5,21 @@
     <form>
         <div class="form-group">
             <label for="CDitem">Item</label>
-            <select name="CDitem" id="CDitem" class="form-control" ng-model="lista.id">
+            <select name="CDitem" id="CDitem" class="form-control" ng-model="produto.itemId">
                 <option value=""> -</option>
-                <option ng-repeat="produto in itensProduto" value="{{produto.id}}">{{produto.descricao}}</option>
+                <option ng-repeat="itemProduto in itensProduto" value="{{itemProduto.id}}">{{itemProduto.descricao}}</option>
             </select>
         </div>
         <div class="form-group">
             <label for="aba">Aba</label>
-            <select name="aba" id="aba" class="form-control" ng-model="lista.aba">
+            <select name="aba" id="aba" class="form-control" ng-model="produto.aba">
                 <option value="">-</option>
                 <option ng-repeat="aba in itensAba" value="{{aba.id}}">{{aba.descricao}}</option>
             </select>
         </div>
         <div class="form-group">
             <label for="valorVenda">Valor de venda</label>
-            <input type="number" class="form-control" id="valorVenda" placeholder="Valor de venda" ng-model="lista.valorVenda">
+            <input type="number" class="form-control" id="valorVenda" placeholder="Valor de venda" ng-model="produto.valorVenda">
         </div>
         <div class="form-group">
             <label for="UNitem">Unidade</label>
@@ -30,21 +30,21 @@
         </div>
         <div class="form-group">
             <label for="descVendaAlt">Descrição Alternativa na Venda</label>
-            <input type="text" class="form-control" id="descVendaAlt" placeholder="Descrição" ng-model="lista.descVendaAlt">
+            <input type="text" class="form-control" id="descVendaAlt" placeholder="Descrição" ng-model="produto.descVendaAlt">
         </div>
         <div class="form-group">
             <label for="corFundoDaVenda">Cor de fundo na venda</label>
-            <input type="text" class="form-control" id="corFundoDaVenda" ng-model="lista.corFundoDaVenda">
+            <input type="text" class="form-control" id="corFundoDaVenda" ng-model="produto.corFundoDaVenda">
         </div>
         <div class="form-group">
             <label for="corLetraDaVenda">Cor da letra na Venda</label>
-            <input type="text" class="form-control" id="corLetraDaVenda" ng-model="lista.corLetraDaVenda">
+            <input type="text" class="form-control" id="corLetraDaVenda" ng-model="produto.corLetraDaVenda">
         </div>
         <div class="form-group">
-            <switch ng-model="lista.ativo" color="success" on-text="Ativo" off-text="Desativado" size="mini"></switch>
+            <switch ng-model="produto.ativo" color="success" on-text="Ativo" off-text="Desativado" size="mini"></switch>
         </div>
 
-        <button class="btn btn-with-icon btn-success" ng-click="salvarItem(lista)">
+        <button class="btn btn-with-icon btn-success" ng-click="salvarProdutoItem(produto)">
             <i class="ion-checkmark-circled"></i>
             Salvar
         </button>
