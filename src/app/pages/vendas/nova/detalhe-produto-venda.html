@@ -1,0 +1,29 @@
+<div
+        ba-panel
+        ba-panel-title="Nova venda"
+        ba-panel-class="with-scroll">
+    <form>
+        <div class="form-group">
+            <label for="prodVariacao">Item</label>
+            <select name="prodVariacao" id="prodVariacao" class="form-control" ng-model="item.variacao"
+                    ng-options="(variacao.nome + ' - ' + (variacao.preco | currency:'R$':2) ) for variacao in item.variacoes track by variacao.id">
+            </select>
+        </div>
+        <div class="form-group" ng-show="item.possuiTamanho">
+            <label for="prodTamanho">Tamanho</label>
+            <select name="prodTamanho" id="prodTamanho" class="form-control" ng-model="item.tamanho"
+                    ng-options="tamanho for tamanho in tamanhos">
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="observacao">Observação</label>
+            <textarea class="form-control" id="observacao" placeholder="Observação" ng-model="item.observacao"></textarea>
+        </div>
+        <button class="btn btn-with-icon btn-success" ng-click="salvarItemVariacao(item)">
+            <i class="ion-plus-circled"></i>
+            Adicionar
+        </button>
+    </form>
+
+</div>

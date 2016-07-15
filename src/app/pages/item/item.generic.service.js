@@ -34,6 +34,11 @@
       {id: 2, descricao: "Fabricado"}
     ];
   };
+    this.recoverTamanhos = function(){
+      return [
+          "PP","P","M","G","GG","SXG"
+      ]
+    };
   this.recoverItensGrupo = function () {
     return [
         {id: 1, descricao: "Alimentos"},

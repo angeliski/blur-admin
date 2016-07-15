@@ -9,25 +9,43 @@
       .controller('VendasPageCtrl', VendasPageCtrl);
 
   /** @ngInject */
-  function VendasPageCtrl($scope, $filter, editableOptions, editableThemes, $uibModal, vendasService) {
+  function VendasPageCtrl($scope, $filter,$uibModal ,vendasService, itemGenericService) {
     $scope.itens = vendasService.listProducts();
+    $scope.abas = vendasService.listaProdutosPorAba();
     $scope.produtos = vendasService.getProdutosAdicionados();
+    $scope.tamanhos = itemGenericService.recoverTamanhos();
 
+
+    $scope.addItemVariavel = function(id){
+      $scope.item = vendasService.findItem(id);
+      $scope.item.variacao = $scope.item.variacoes[0];
+      $scope.modalProduto =  $uibModal.open({
+        animation: true,
+        scope: $scope,
+        templateUrl: "/app/pages/vendas/nova/detalhe-produto-venda.html",
+        size: "lg"
+      });
+    };
+
+    $scope.salvarItemVariacao = function(item){
+      vendasService.addItemVariacao(item);
+      $scope.modalProduto.close();
+    };
 
     $scope.addItem = function(id, qtd){
       vendasService.addItem(id,qtd);
       $scope.produtos = vendasService.getProdutosAdicionados();
-    }
+    };
 
     $scope.removeItem = function(id, qtd){
       vendasService.removeItem(id,qtd);
       $scope.produtos = vendasService.getProdutosAdicionados();
-    }
+    };
 
     $scope.deletaItem = function(id, qtd){
       vendasService.deletaItem(id);
       $scope.produtos = vendasService.getProdutosAdicionados();
-    }
+    };
 
     
     $scope.getTotalVenda = function(){
@@ -37,12 +55,12 @@
         sum +=  prod.qtd * prod.preco;
       } 
       return sum;
-    }
+    };
 
     $scope.finalizarVenda = function (type){
       vendasService.finalizarVenda(type);
       $scope.produtos = vendasService.getProdutosAdicionados();
-    }
+    };
 
 
 
@@ -741,12 +759,6 @@
       };
       $scope.users.push($scope.inserted);
     };
-
-    editableOptions.theme = 'bs3';
-    editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
-    editableThemes['bs3'].cancelTpl = '<button type="button" ng-click="$form.$cancel()" class="btn btn-default btn-with-icon"><i class="ion-close-round"></i></button>';
-
-
   }
 
 })();
