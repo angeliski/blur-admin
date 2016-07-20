@@ -214,6 +214,97 @@
             ];
         };
 
+        that.getVendasRealizadas = function (first, maxResult) {
+            var preco = Math.floor(Math.random() * 30) + 1;
+            var idInicio = 20008008 + first;
+            var vendas = [
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                },
+                {
+                    id: idInicio++,
+                    dataVenda: new Date(),
+                    total: preco,
+                    pago: preco,
+                    pendente: false,
+                    cancelado: false
+                }
+            ];
+            
+            return {
+                data: vendas,
+                numberOfPages: 5
+            }
+        };
 
         var produtos = [];
         var itens = that.recoverProducts();
