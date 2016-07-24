@@ -20,7 +20,7 @@
           menuItem: true,
           sidebarMeta: {
             icon: 'fa fa-gift',
-            order: 100,
+            order: 200,
           },
         }).state('item.novo', {
           url: '/novo',

@@ -1,0 +1,130 @@
+<div
+        ba-panel
+        ba-panel-title="Encerramento do CAIXA"
+        ba-panel-class="with-scroll">
+    <form>
+        <div class="form-group">
+            <button class="btn btn-with-icon btn-danger pull-right" ng-click="imprimirFechamento(item)" ng-show="item.persistido">
+                <i class="ion-printer"></i>
+                Imprimir
+            </button>
+            <h3>Data do fechamento: {{item.dataFechamento | date:'dd MMM yyyy'}}</h3>
+            <h5 ng-show="item.persitido">CdCaixa: {{item.id}}</h5>
+        </div>
+
+        <div ba-panel
+                ba-panel-class="panel-warning"
+                ba-panel-title="VALORES DE ENTRADA">
+            <div class="row">
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="entradaTroco">Troco de entrada</label>
+                    <input type="number" class="form-control" id="entradaTroco" placeholder="Troco de entrada" ng-model="item.entradaTroco">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="dinheiro">Dinheiro</label>
+                    <input type="number" class="form-control" id="dinheiro" placeholder="Dinheiro" ng-model="item.dinheiro">
+                </div>
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="cheque">Cheque</label>
+                    <input type="number" class="form-control" id="cheque" placeholder="Cheque" ng-model="item.cheque">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="deposito">Depósito</label>
+                    <input type="number" class="form-control" id="deposito" placeholder="Depósito" ng-model="item.deposito">
+                </div>
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="xaluga">Xaluga</label>
+                    <input type="number" class="form-control" id="xaluga" placeholder="Xaluga" ng-model="item.xaluga">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="debito">Cartão Débito</label>
+                    <input type="number" class="form-control" id="debito" placeholder="Cartão Débito" ng-model="item.debito">
+                </div>
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="credito">Cartão Crédito</label>
+                    <input type="number" class="form-control" id="credito" placeholder="Cartão Crédito" ng-model="item.credito">
+                </div>
+            </div>
+        </div>
+        <div ba-panel
+             ba-panel-class="panel-primary"
+             ba-panel-title="VALORES DE SAIDA">
+            <div class="row">
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="despesas">Despesas</label>
+                    <input type="number" class="form-control" id="despesas" placeholder="Despesas" ng-model="item.despesas">
+                </div>
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="colaboradores">Colaboradores</label>
+                    <input type="number" class="form-control" id="colaboradores" placeholder="Colaboradores" ng-model="item.colaboradores">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6 col-md-6 col-sm-6">
+                    <label for="saidaTroco">Troco de saída</label>
+                    <input type="number" class="form-control" id="saidaTroco" placeholder="Troco de saída" ng-model="item.saidaTroco">
+                </div>
+            </div>
+        </div>
+
+        <div ba-panel
+             ba-panel-class="panel-success"
+             ba-panel-title="TOTAIS">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td>Soma das entradas:</td>
+                    <td>{{somaDasEntradas() | currency:"R$":2}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Soma das Saídas:</td>
+                    <td>{{somaDasSaidas() | currency:"R$":2}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Valor Fechamento:</td>
+                    <td>{{valorFechamento()| currency:"R$":2}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Total das Vendas:</td>
+                    <td>{{item.totalVendas | currency:"R$":2}}</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                    <th colspan="3">
+                        <textarea class="form-control" id="observacao" placeholder="Observação" ng-model="item.observacao"></textarea>
+                    </th>
+                </tfoot>
+            </table>
+            <div class="form-group">
+                <label for="responsavel">Responsável</label>
+                <input type="text" class="form-control" id="responsavel" placeholder="Responsável" ng-model="item.responsavel">
+            </div>
+        </div>
+        <button class="btn btn-with-icon btn-success" ng-click="salvarItem(item)" ng-show="item.persistido">
+            <i class="ion-checkmark-circled"></i>
+            Salvar
+        </button>
+        <button class="btn btn-with-icon btn-success" ng-click="fecharVendas(item)">
+            <i class="ion-checkmark-circled"></i>
+            Fechar Vendas
+        </button>
+
+    </form>
+</div>

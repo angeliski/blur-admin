@@ -20,7 +20,8 @@
     'BlurAdmin.pages.home',
     'BlurAdmin.pages.vendas',
     'TGB.pages.item',
-    'TGB.pages.param'
+    'TGB.pages.param',
+    'TGB.pages.caixa'
   ])
       .config(routeConfig);
 
