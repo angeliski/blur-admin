@@ -1,6 +1,33 @@
-<div
-        ba-panel
-        ba-panel-title="Fechamentos"
-        ba-panel-class="with-scroll">
+<div class="col-lg-12 col-md-12">
+    <div ba-panel ba-panel-class="with-scroll">
 
+        <table class="table" st-table="fechamentos" st-pipe="paginate">
+            <thead>
+            <tr>
+                <th class="table-id">#</th>
+                <th>Data</th>
+                <th>Local</th>
+                <th>Total das comandas</th>
+                <th>Total do Fechamento</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in fechamentos" ng-class="item.totalVendas != item.totalFechamento">
+                <td class="table-id">{{item.id}}</td>
+                <td>{{item.dataFechamento | date:'dd MMM yyyy'}}</td>
+                <td>{{item.local}}</td>
+                <td>{{item.totalVendas | currency:"R$":2}}</td>
+                <td>{{item.totalFechamento | currency:"R$":2}}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="6" class="text-center">
+                    <div st-pagination=""></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+
+    </div>
 </div>

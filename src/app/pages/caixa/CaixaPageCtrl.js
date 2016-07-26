@@ -9,11 +9,16 @@
         .controller('CaixaPageCtrl', CaixaPageCtrl);
 
     /** @ngInject */
-    function CaixaPageCtrl($scope,$state, $uibModal) {
+    function CaixaPageCtrl($scope, caixaService, $state, $uibModal) {
         $scope.item = {
             dataFechamento : new Date(),
             totalVendas:0,
             persistido: false
+        };
+
+        $scope.fecharVendas = function (item) {
+            caixaService.fecharVendas(item);
+            $state.go("caixa.lista-fechamento");
         };
 
         $scope.somaDasEntradas = function () {
@@ -34,7 +39,9 @@
 
         $scope.valorFechamento = function () {
             return $scope.somaDasEntradas() - $scope.somaDasSaidas();
-        }
+        };
+
+        $scope.fechamentos = caixaService.listaFechamentos();
     }
 
 })();
