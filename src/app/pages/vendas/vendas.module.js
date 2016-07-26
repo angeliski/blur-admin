@@ -20,24 +20,38 @@
           menuItem: true,
           sidebarMeta: {
             icon: 'fa fa-shopping-cart',
-            order: 100,
-          },
+            order: 100
+          }
         }).state('vendas.nova', {
           url: '/nova',
           templateUrl: 'app/pages/vendas/nova/nova.html',
           title: 'Nova venda',
           menuItem: true,
+            data:{
+                encomenda: false
+            },
           sidebarMeta: {
-            order: 0,
-          },
+            order: 0
+          }
         }).state('vendas.realizadas', {
           url: '/realizadas',
           templateUrl: 'app/pages/vendas/realizadas/realizadas.html',
           title: 'Vendas realizadas',
           menuItem: true,
           sidebarMeta: {
-            order: 100,
+            order: 100
+          }
+        }).state('vendas.encomenda', {
+          url: '/encomenda',
+          templateUrl: 'app/pages/vendas/nova/nova.html',
+          data:{
+            encomenda: true
           },
+          title: 'Nova encomenda',
+          menuItem: true,
+          sidebarMeta: {
+            order: 100
+          }
         });
     $urlRouterProvider.when('/vendas','/vendas/nova');
   }
