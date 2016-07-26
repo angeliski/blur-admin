@@ -1,0 +1,47 @@
+swagger: '2.0'
+info:
+  title: TG API
+  description: API de serviços do TGB
+  version: "0.0.1"
+host: tg-tecnologia.com.br
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /api
+produces:
+  - application/json
+paths:
+  /estoques:
+    get:
+      summary: Retorna todos os estoques
+      description: |
+        Retorna todos os estoques cadastrados
+      tags:
+        - Estoque
+      responses:
+        200:
+          description: Um array de estoques
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Estoque'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Estoque:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+  Error:
+    type: object
+    properties:
+      codigo:
+        type: integer
+        format: int32
+      mensagem:
+        type: string

@@ -33,7 +33,6 @@
         // precisa buscar os itens novamente
 
         that.finalizarVenda = function (type,isEncomenda) {
-            console.log(isEncomenda);
             produtos = [];
             toastr.success('Sua compra foi finalizada!');
         };
