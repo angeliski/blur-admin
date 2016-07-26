@@ -16,7 +16,7 @@ paths:
     get:
       summary: Retorna todos os estoques
       description: |
-        Retorna todos os estoques cadastrados
+        Retorna todos os estoques cadastrados - Tabela MM0060
       tags:
         - Estoque
       responses:
@@ -34,9 +34,11 @@ definitions:
   Estoque:
     type: object
     properties:
-      code:
+      id:
         type: integer
         format: int32
+      descricao:
+        type: string
   Error:
     type: object
     properties:
